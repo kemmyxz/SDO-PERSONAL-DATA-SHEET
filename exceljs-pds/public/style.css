@@ -1,0 +1,347 @@
+body {
+  background: linear-gradient(180deg, #3f69c2 0%, #1e325c 93.33%);
+  font-family: "Arial", Arial, sans-serif;
+  font-size: 13px;
+}
+.pds-container {
+  max-width: 1000px;
+  margin: 18px auto;
+  padding: 14px;
+}
+
+.pds-table td,
+.pds-table th {
+  border: 1px solid #000;
+  padding: 6px;
+  vertical-align: top;
+}
+.form-control,
+.form-select {
+  border: none;
+  border-radius: 0;
+  padding: 4px 6px;
+  font-size: 13px;
+}
+.checkbox-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+}
+.photo-box {
+  border: 2px solid #000;
+  width: 110px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.small-note {
+  font-size: 11px;
+  color: #333;
+}
+.sig-box {
+  border-top: 1px solid #000;
+  width: 260px;
+  text-align: center;
+  margin-top: 18px;
+  padding-top: 6px;
+}
+.thumb-box {
+  border: 1px solid #000;
+  width: 140px;
+  height: 120px;
+  text-align: center;
+  padding-top: 6px;
+}
+.yesno {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+label.req {
+  font-weight: 700;
+}
+
+.pds-container {
+  background-color: white;
+  max-width: 1000px;
+  margin: auto;
+  border: 2px solid #000;
+  padding: 15px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+.pds-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+.pds-text {
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+}
+.pds-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+.pds-table td,
+.pds-table th {
+  border: 1px solid #000;
+  padding: 3px 5px;
+  vertical-align: top;
+}
+.section-header {
+  background: #444;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px;
+  text-transform: uppercase;
+}
+.gray-cell {
+  background: #e9e9e9;
+  font-weight: bold;
+}
+.form-control,
+.form-select {
+  border: none;
+  border-radius: 0;
+  font-size: 13px;
+  padding: 2px 4px;
+}
+.form-check {
+  margin: 0;
+  padding: 0;
+}
+.form-check-label {
+  margin-left: 2px;
+}
+.cs-id-label {
+  border: 1px solid #000;
+  background-color: #a9a9a9;
+  padding: 5px 6px;
+  margin-left: 55px;
+}
+.cs-id-input {
+  border: 1px solid #000;
+  padding: 2px 6px;
+  font-size: 13px;
+  width: 250px;
+}
+.black-border-checkbox {
+  border: 2px solid #000 !important;
+}
+.signature-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.signature-box div {
+  border-top: 1px solid #000;
+  width: 200px;
+  text-align: center;
+  padding-top: 4px;
+}
+.logos {
+  height: 100px;
+}
+.sdo-title {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: white;
+}
+.deped-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.sig-row {
+  display: flex;
+  gap: 0;
+  border: 2px solid #000;
+  align-items: stretch;
+  margin-top: 12px;
+}
+
+/* Each cell has a light gray header (label) and white content area */
+.sig-cell {
+  display: flex;
+  flex-direction: column;
+  min-height: 90px;
+  background: #fff;
+}
+.sig-cell .cell-header {
+  background: #e9e9e9;
+  padding: 10px 14px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.sig-cell .cell-content {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #000;
+  min-height: 70px;
+}
+
+/* left (signature) is wide, right (date) is narrow */
+.sig-left {
+  flex: 1 1 70%;
+}
+.sig-right {
+  flex: 0 0 220px;
+}
+
+/* preview area styling */
+#signaturePreview {
+  width: 100%;
+  max-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+#signaturePreview img {
+  max-height: 70px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* hidden file input trigger styling */
+.upload-button {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* small controls container under signature */
+.sig-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.pds-text {
+  color: #666;
+}
+.date-inline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.date-inline label {
+  margin: 0 6px 0 0;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.date-inline .form-control {
+  display: inline-block;
+  width: 50%;
+  padding: 4px 6px;
+}
+
+/* make the whole preview area clickable to open file selector */
+.clickable-preview {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+/* Media Queries for phone and tablet */
+@media (max-width: 991px) {
+  .pds-container {
+    max-width: 100%;
+    padding: 8px;
+  }
+  .pds-title {
+    font-size: 24px;
+  }
+  .logos {
+    height: 70px;
+  }
+  .sdo-title {
+    font-size: 1.2rem;
+  }
+  .deped-title {
+    font-size: 1rem;
+  }
+  .cs-id-input {
+    width: 100%;
+    min-width: 0;
+  }
+  .signature-box div {
+    width: 120px;
+  }
+  .pds-table {
+    min-width: 400px;
+    font-size: 11px;
+  }
+  .pds-table td,
+  .pds-table th {
+    padding: 2px 3px;
+  }
+}
+@media (max-width: 600px) {
+  .pds-container {
+    padding: 4px;
+  }
+  .pds-title {
+    font-size: 18px;
+  }
+  .logos {
+    height: 45px;
+  }
+  .sdo-title {
+    font-size: 1rem;
+  }
+  .deped-title {
+    font-size: 0.9rem;
+  }
+  .signature-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .signature-box div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .cs-id-label {
+    margin-left: 0;
+    padding: 3px 4px;
+  }
+  .pds-table {
+    min-width: 300px;
+    font-size: 10px;
+  }
+  .pds-table td,
+  .pds-table th {
+    padding: 1px 2px;
+  }
+}
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .pds-container {
+    padding: 10px;
+  }
+  .upload-box {
+    width: 220px;
+    height: 110px;
+  }
+  .sig-box {
+    width: 220px;
+  }
+}

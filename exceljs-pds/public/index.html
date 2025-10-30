@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Data Sheet</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header with logos and text -->
+    <div class="container mt-3 mb-4">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <img src="/images/bagongPilipinas.png" class="logos" />
+        </div>
+        <div class="col-auto">
+          <img src="/images/SDO-VAL-Logo.png" class="logos" />
+        </div>
+        <div class="col ps-3">
+          <div class="sdo-title">SCHOOL DIVISION OFFICE - VALENZUELA</div>
+          <div class="deped-title">Department of Education</div>
+        </div>
+      </div>
+    </div>
+    <div class="pds-container p-0">
+      <p class="pds-text">
+        <i>
+          <b>CS Form No. 212 </b>
+          <br />
+          <small> Revised 2017</small></i
+        >
+      </p>
+      <div class="pds-title">PERSONAL DATA SHEET</div>
+      <p class="pds-text">
+        <small>
+          <b
+            ><i
+              >WARNING: Any misrepresentation made in the Personal Data Sheet
+              and the Work Experience Sheet shall cause the filing of
+              administrative/criminal case/s against the person concerned.<br />
+              READ THE ATTACHED GUIDE TO FILLING OUT THE PERSONAL DATA SHEET
+              (PDS) BEFORE ACCOMPLISHING THE PDS FORM.<br /></i
+          ></b>
+          Print legibly. Tick appropriate boxes (☐) and use separate sheet if
+          necessary. Indicate N/A if not applicable. <b>DO NOT ABBREVIATE.</b>
+        </small>
+        <span class="cs-id-label">CS ID No.:</span>
+        <input
+          type="text"
+          class="cs-id-input"
+          placeholder="(Do not fill up. For CSC use only)"
+        />
+      </p>
+
+      <!-- Section I. PERSONAL INFORMATION -->
+      <div class="section-header">I. PERSONAL INFORMATION</div>
+      <table class="pds-table">
+        <tr>
+          <td class="gray-cell" style="width: 20%">
+            2. SURNAME<br />
+            FIRST NAME<br />MIDDLE NAME
+          </td>
+          <td colspan="2">
+            <input type="text" class="form-control" id="surname" style="border-bottom: 1px solid #000" />
+            <input type="text" class="form-control" id="firstname" style="border-bottom: 1px solid #000" />
+            <input type="text" class="form-control" id="middlename" style="border-bottom: 1px solid #000" />
+          </td>
+          <td style="width: 30%">
+            NAME EXTENSION (JR., SR.)<br />
+            <input type="text" class="form-control" id="nameExtension" />
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell">3. DATE OF BIRTH<br />(mm/dd/yyyy)</td>
+          <td>
+            <input type="date" class="form-control" id="dateOfBirth" />
+          </td>
+          <td class="gray-cell" rowspan="2" style="width: 20%">
+            16. CITIZENSHIP<br />
+            <small
+              >If holder of dual citizenship,<br />please indicate the
+              details.</small
+            >
+          </td>
+          <td rowspan="2">
+            <div class="form-check ms-4">
+              <input
+                type="checkbox"
+                class="form-check-input black-border-checkbox"
+                id="citizenshipFilipino"
+                name="citizenshipMain"
+              />
+              <label class="form-check-label" for="citizenshipFilipino"
+                >Filipino</label
+              >
+            </div>
+            <div class="form-check ms-4">
+              <input
+                type="checkbox"
+                class="form-check-input black-border-checkbox"
+                id="citizenshipDual"
+                name="citizenshipMain"
+              />
+              <label class="form-check-label" for="citizenshipDual"
+                >Dual Citizenship</label
+              >
+            </div>
+            <div class="form-check ms-5">
+              <input
+                type="radio"
+                class="form-check-input black-border-checkbox"
+                id="dualByBirth"
+                name="dualType"
+                disabled
+              />
+              <label class="form-check-label" for="dualByBirth">by birth</label>
+            </div>
+            <div class="form-check ms-5">
+              <input
+                type="radio"
+                class="form-check-input black-border-checkbox"
+                id="dualByNaturalization"
+                name="dualType"
+                disabled
+              />
+              <label class="form-check-label" for="dualByNaturalization"
+                >by naturalization</label
+              >
+            </div>
+            <label class="form-label mt-1">Pls. indicate country:</label>
+            <select class="form-select" id="dualCountry" disabled>
+              <option value="">Select country</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="Bahamas">Bahamas</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Barbados">Barbados</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Belize">Belize</option>
+              <option value="Benin">Benin</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Bosnia and Herzegovina">
+                Bosnia and Herzegovina
+              </option>
+              <option value="Botswana">Botswana</option>
+              </option>option value="Brazil">Brazil</option>
+              <option value="Brunei">Brunei</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cabo Verde">Cabo Verde</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="Cameroon">Cameroon</option>
+              <option value="Canada">Canada</option>
+              <option value="Central African Republic">
+                Central African Republic
+              </option>
+              <option value="Chad">Chad</option>
+              <option value="Chile">Chile</option>
+              <option value="China">China</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Comoros">Comoros</option>
+              <option value="Congo, Democratic Republic of the">
+                Congo, Democratic Republic of the
+              </option>
+              <option value="Congo, Republic of the">
+                Congo, Republic of the
+              </option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Cote d'Ivoire">Côte d'Ivoire</option>
+              <option value="Croatia">Croatia</option>
+              <option value="Cuba">Cuba</option>
+              <option value="Cyprus">Cyprus</option>
+              <option value="Czech Republic">Czech Republic</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Djibouti">Djibouti</option>
+              <option value="Dominica">Dominica</option>
+              <option value="Dominican Republic">Dominican Republic</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Estonia">Estonia</option>
+              <option value="Eswatini">Eswatini</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Fiji">Fiji</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Gambia">Gambia</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Germany">Germany</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Greece">Greece</option>
+              <option value="Grenada">Grenada</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Guinea-Bissau">Guinea-Bissau</option>
+              <option value="Guyana">Guyana</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Iran">Iran</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Japan">Japan</option>
+              <option value="Jordan">Jordan</option>
+              <option value="Kazakhstan">Kazakhstan</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Kiribati">Kiribati</option>
+              <option value="Korea, North">Korea, North</option>
+              <option value="Korea, South">Korea, South</option>
+              <option value="Kosovo">Kosovo</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Laos">Laos</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="Lesotho">Lesotho</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Libya">Libya</option>
+              <option value="Liechtenstein">Liechtenstein</option>
+              <option value="Lithuania">Lithuania</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="Malawi">Malawi</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Mali">Mali</option>
+              <option value="Malta">Malta</option>
+              <option value="Marshall Islands">Marshall Islands</option>
+              <option value="Mauritania">Mauritania</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Micronesia">Micronesia</option>
+              <option value="Moldova">Moldova</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Mongolia">Mongolia</option>
+              <option value="Montenegro">Montenegro</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Mozambique">Mozambique</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Nauru">Nauru</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="North Macedonia">North Macedonia</option>
+              <option value="Norway">Norway</option>
+              <option value="Oman">Oman</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Palau">Palau</option>
+              <option value="Palestine">Palestine</option>
+              <option value="Panama">Panama</option>
+              <option value="Papua New Guinea">Papua New Guinea</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Peru">Peru</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Romania">Romania</option>
+              <option value="Russia">Russia</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Saint Kitts and Nevis">
+                Saint Kitts and Nevis
+              </option>
+              <option value="Saint Lucia">Saint Lucia</option>
+              <option value="Saint Vincent and the Grenadines">
+                Saint Vincent and the Grenadines
+              </option>
+              <option value="Samoa">Samoa</option>
+              <option value="San Marino">San Marino</option>
+              <option value="Sao Tome and Principe">
+                Sao Tome and Principe
+              </option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Serbia">Serbia</option>
+              <option value="Seychelles">Seychelles</option>
+              <option value="Sierra Leone">Sierra Leone</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Slovakia">Slovakia</option>
+              <option value="Slovenia">Slovenia</option>
+              <option value="Solomon Islands">Solomon Islands</option>
+              <option value="Somalia">Somalia</option>
+              <option value="South Africa">South Africa</option>
+              <option value="South Sudan">South Sudan</option>
+              <option value="Spain">Spain</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Sudan">Sudan</option>
+              <option value="Suriname">Suriname</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Syria">Syria</option>
+              <option value="Taiwan">Taiwan</option>
+              <option value="Tajikistan">Tajikistan</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Timor-Leste">Timor-Leste</option>
+              <option value="Togo">Togo</option>
+              <option value="Tonga">Tonga</option>
+              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+              <option value="Tunisia">Tunisia</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Turkmenistan">Turkmenistan</option>
+              <option value="Tuvalu">Tuvalu</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Uzbekistan">Uzbekistan</option>
+              <option value="Vanuatu">Vanuatu</option>
+              <option value="Vatican City">Vatican City</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Yemen">Yemen</option>
+              <option value="Zambia">Zambia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell">4. PLACE OF BIRTH</td>
+          <td>
+            <input type="text" class="form-control w-100 h-100" id="placeOfBirth" />
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell">5. SEX</td>
+          <td>
+            <div class="form-check ms-4">
+              <input
+                type="radio"
+                class="form-check-input black-border-checkbox"
+                name="sex"
+                id="sexMale"
+                value="Male"
+              />
+              <label class="form-check-label" for="sexMale">Male</label>
+            </div>
+            <div class="form-check ms-4">
+              <input
+                type="radio"
+                class="form-check-input black-border-checkbox"
+                name="sex"
+                id="sexFemale"
+                value="Female"
+              />
+              <label class="form-check-label" for="sexFemale">Female</label>
+            </div>
+          </td>
+          <td class="gray-cell">6. CIVIL STATUS</td>
+          <td>
+            <div class="d-flex flex-lg-row flex-column justify-content-between">
+              <div>
+                <div class="form-check ms-4">
+                  <input
+                    type="radio"
+                    class="form-check-input black-border-checkbox"
+                    name="civilStatus"
+                    id="civilSingle"
+                    value="Single"
+                  />
+                  <label class="form-check-label" for="civilSingle"
+                    >Single</label
+                  >
+                </div>
+                <div class="form-check ms-4">
+                  <input
+                    type="radio"
+                    class="form-check-input black-border-checkbox"
+                    name="civilStatus"
+                    id="civilMarried"
+                    value="Married"
+                  />
+                  <label class="form-check-label" for="civilMarried"
+                    >Married</label
+                  >
+                </div>
+              </div>
+              <div>
+                <div class="form-check ms-4">
+                  <input
+                    type="radio"
+                    class="form-check-input black-border-checkbox"
+                    name="civilStatus"
+                    id="civilWidowed"
+                    value="Widowed"
+                  />
+                  <label class="form-check-label" for="civilWidowed"
+                    >Widowed</label
+                  >
+                </div>
+                <div class="form-check ms-4">
+                  <input
+                    type="radio"
+                    class="form-check-input black-border-checkbox"
+                    name="civilStatus"
+                    id="civilSeparated"
+                    value="Separated"
+                  />
+                  <label class="form-check-label" for="civilSeparated"
+                    >Separated</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="form-check ms-4 mt-1">
+              <input
+                type="radio"
+                class="form-check-input black-border-checkbox"
+                name="civilStatus"
+                id="civilOther"
+                value="Other"
+              />
+              <label class="form-check-label" for="civilOther">Other/s:</label>
+              <input
+                type="text"
+                class="form-control d-inline-block ms-2"
+                id="civilOtherInput"
+                style="width: 200px; display: none"
+                placeholder="Please specify"
+                disabled
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell">7. HEIGHT (m)</td>
+          <td><input type="text" class="form-control" id="height" /></td>
+          <td class="gray-cell">17. RESIDENTIAL ADDRESS</td>
+          <td>
+            <input
+              type="text"
+              class="form-control mb-1"
+              id="resAddress1"
+              placeholder="House/Block/Lot No., Street"
+            />
+            <input
+              type="text"
+              class="form-control mb-1"
+              id="resAddress2"
+              placeholder="Subdivision/Village, Barangay"
+            />
+            <input
+              type="text"
+              class="form-control mb-1"
+              id="resAddress3"
+              placeholder="City/Municipality, Province"
+            />
+            <input type="text" class="form-control" id="resZip" placeholder="ZIP Code" />
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell">8. WEIGHT (kg)</td>
+          <td><input type="text" class="form-control" id="weight" /></td>
+          <td class="gray-cell">18. PERMANENT ADDRESS</td>
+          <td>
+            <input
+              type="text"
+              class="form-control mb-1"
+              id="permAddress1"
+              placeholder="House/Block/Lot No., Street"
+            />
+            <input
+              type="text"
+              class="form-control mb-1"
+              id="permAddress2"
+              placeholder="Subdivision/Village, Barangay"
+            />
+            <input
+              type="text"
+              class="form-control mb-1"
+              id="permAddress3"
+              placeholder="City/Municipality, Province"
+            />
+            <input type="text" class="form-control" id="permZip" placeholder="ZIP Code" />
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell">9. BLOOD TYPE</td>
+          <td><input type="text" class="form-control" id="bloodType" /></td>
+          <td class="gray-cell">19. TELEPHONE NO.</td>
+          <td><input type="text" class="form-control" id="telNo" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">10. GSIS ID NO.</td>
+          <td><input type="text" class="form-control" id="gsisId" /></td>
+          <td class="gray-cell">20. MOBILE NO.</td>
+          <td><input type="text" class="form-control" id="mobileNo" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">11. PAG-IBIG ID NO.</td>
+          <td><input type="text" class="form-control" id="pagibigId" /></td>
+          <td class="gray-cell">21. E-MAIL ADDRESS (if any)</td>
+          <td><input type="email" class="form-control" id="email" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">12. PHILHEALTH NO.</td>
+          <td><input type="text" class="form-control" id="philhealthNo" /></td>
+          <td class="gray-cell">14. TIN NO.</td>
+          <td><input type="text" class="form-control" id="tinNo" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">13. SSS NO.</td>
+          <td><input type="text" class="form-control" id="sssNo" /></td>
+          <td class="gray-cell">15. AGENCY EMPLOYEE NO.</td>
+          <td><input type="text" class="form-control" id="agencyEmpNo" /></td>
+        </tr>
+      </table>
+      <!-- Section II. FAMILY BACKGROUND -->
+      <div class="section-header">II. FAMILY BACKGROUND</div>
+      <table class="pds-table">
+        <!-- Spouse Row -->
+        <tr>
+          <td class="gray-cell" style="width: 20%">
+            22. SPOUSE'S SURNAME<br />FIRST NAME<br />MIDDLE NAME
+          </td>
+          <td style="width: 25%">
+            <input type="text" class="form-control mb-1" id="spouseSurname" placeholder="Surname" />
+            <input type="text" class="form-control mb-1" id="spouseFirstname" placeholder="First Name" />
+            <input type="text" class="form-control" id="spouseMiddlename" placeholder="Middle Name" />
+          </td>
+          <td style="width: 10%">
+            NAME EXTENSION (JR., SR.)<br />
+            <input type="text" class="form-control" id="spouseExtension" />
+          </td>
+          <td class="gray-cell" style="width: 25%">
+            23. NAME OF CHILDREN<br /><small
+              >(Write full name and list all)</small
+            >
+          </td>
+          <td class="gray-cell" style="width: 17%">DATE OF BIRTH<br /></td>
+        </tr>
+
+        <!-- Children rows -->
+        <tr>
+          <td class="gray-cell">OCCUPATION</td>
+          <td colspan="2"><input type="text" class="form-control" id="spouseOccupation" /></td>
+          <td><input type="text" class="form-control" id="childName1" /></td>
+          <td><input type="date" class="form-control" id="childDob1" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">EMPLOYER/BUSINESS NAME</td>
+          <td colspan="2"><input type="text" class="form-control" /></td>
+          <td><input type="text" class="form-control" /></td>
+          <td><input type="date" class="form-control" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">BUSINESS ADDRESS</td>
+          <td colspan="2"><input type="text" class="form-control" /></td>
+          <td><input type="text" class="form-control" /></td>
+          <td><input type="date" class="form-control" /></td>
+        </tr>
+        <tr>
+          <td class="gray-cell">TELEPHONE NO.</td>
+          <td colspan="2"><input type="text" class="form-control" /></td>
+          <td><input type="text" class="form-control" /></td>
+          <td><input type="date" class="form-control" /></td>
+        </tr>
+
+        <!-- Father -->
+        <tr>
+          <td class="gray-cell">
+            24. FATHER'S SURNAME<br />FIRST NAME<br />MIDDLE NAME
+          </td>
+          <td>
+            <input type="text" class="form-control mb-1" id="fatherSurname" placeholder="Surname" />
+            <input type="text" class="form-control mb-1" id="fatherFirstname" placeholder="First Name" />
+            <input type="text" class="form-control" id="fatherMiddlename" placeholder="Middle Name" />
+          </td>
+          <td style="width: 10%">
+            NAME EXTENSION (JR., SR.)<br />
+            <input type="text" class="form-control" id="fatherExtension" />
+          </td>
+          <td><input type="text" class="form-control" id="fatherOther" /></td>
+          <td><input type="date" class="form-control" id="fatherDob" /></td>
+        </tr>
+
+        <!-- Mother -->
+        <tr>
+          <td class="gray-cell">
+            25. MOTHER'S MAIDEN NAME<br />SURNAME<br />FIRST NAME<br />MIDDLE NAME
+          </td>
+          <td colspan="2">
+            <input type="text" class="form-control mb-1" id="motherSurname" placeholder="Surname" />
+            <input type="text" class="form-control mb-1" id="motherFirstname" placeholder="First Name" />
+            <input type="text" class="form-control" id="motherMiddlename" placeholder="Middle Name" />
+          </td>
+          <td><input type="text" class="form-control" id="motherOther" /></td>
+          <td><input type="date" class="form-control" id="motherDob" /></td>
+        </tr>
+      </table>
+
+      <!-- Section III. EDUCATIONAL BACKGROUND -->
+      <div class="section-header">III. EDUCATIONAL BACKGROUND</div>
+      <table class="pds-table">
+        <tr>
+          <td class="gray-cell" rowspan="2" style="width: 10%">
+            26.<br />LEVEL
+          </td>
+          <td class="gray-cell text-center" rowspan="2" style="width: 20%">
+            NAME OF SCHOOL<br /><small>(Write in full)</small>
+          </td>
+          <td class="gray-cell text-center" rowspan="2" style="width: 20%">
+            BASIC EDUCATION/DEGREE/COURSE<br /><small>(Write in full)</small>
+          </td>
+          <td class="gray-cell text-center" colspan="2" style="width: 15%">
+            PERIOD OF ATTENDANCE
+          </td>
+          <td class="gray-cell text-center" rowspan="2" style="width: 10%">
+            HIGHEST LEVEL /<br />UNITS EARNED<br /><small
+              >(if not graduated)</small
+            >
+          </td>
+          <td class="gray-cell text-center" rowspan="2" style="width: 10%">
+            YEAR<br />GRADUATED
+          </td>
+          <td class="gray-cell text-center" rowspan="2" style="width: 15%">
+            SCHOLARSHIP /<br />ACADEMIC HONORS<br />RECEIVED
+          </td>
+        </tr>
+        <tr>
+          <td class="gray-cell text-center" style="width: 7%">From</td>
+          <td class="gray-cell text-center" style="width: 7%">To</td>
+        </tr>
+
+        <!-- Elementary -->
+        <tr>
+          <td class="gray-cell">ELEMENTARY</td>
+          <td><input type="text" class="form-control" id="elemSchool" /></td>
+          <td><input type="text" class="form-control" id="elemDegree" /></td>
+          <td><input type="text" class="form-control" id="elemFrom" /></td>
+          <td><input type="text" class="form-control" id="elemTo" /></td>
+          <td><input type="text" class="form-control" id="elemUnits" /></td>
+          <td><input type="text" class="form-control" id="elemYearGrad" /></td>
+          <td><input type="text" class="form-control" id="elemHonors" /></td>
+        </tr>
+
+        <!-- Secondary -->
+        <tr>
+          <td class="gray-cell">SECONDARY</td>
+          <td><input type="text" class="form-control" id="secSchool" /></td>
+          <td><input type="text" class="form-control" id="secDegree" /></td>
+          <td><input type="text" class="form-control" id="secFrom" /></td>
+          <td><input type="text" class="form-control" id="secTo" /></td>
+          <td><input type="text" class="form-control" id="secUnits" /></td>
+          <td><input type="text" class="form-control" id="secYearGrad" /></td>
+          <td><input type="text" class="form-control" id="secHonors" /></td>
+        </tr>
+
+        <!-- Vocational -->
+        <tr>
+          <td class="gray-cell">VOCATIONAL /<br />TRADE COURSE</td>
+          <td><input type="text" class="form-control" id="vocSchool" /></td>
+          <td><input type="text" class="form-control" id="vocDegree" /></td>
+          <td><input type="text" class="form-control" id="vocFrom" /></td>
+          <td><input type="text" class="form-control" id="vocTo" /></td>
+          <td><input type="text" class="form-control" id="vocUnits" /></td>
+          <td><input type="text" class="form-control" id="vocYearGrad" /></td>
+          <td><input type="text" class="form-control" id="vocHonors" /></td>
+        </tr>
+
+        <!-- College -->
+        <tr>
+          <td class="gray-cell">COLLEGE</td>
+          <td><input type="text" class="form-control" id="colSchool" /></td>
+          <td><input type="text" class="form-control" id="colDegree" /></td>
+          <td><input type="text" class="form-control" id="colFrom" /></td>
+          <td><input type="text" class="form-control" id="colTo" /></td>
+          <td><input type="text" class="form-control" id="colUnits" /></td>
+          <td><input type="text" class="form-control" id="colYearGrad" /></td>
+          <td><input type="text" class="form-control" id="colHonors" /></td>
+        </tr>
+
+        <!-- Graduate Studies -->
+        <tr>
+          <td class="gray-cell">GRADUATE STUDIES</td>
+          <td><input type="text" class="form-control" id="gradSchool" /></td>
+          <td><input type="text" class="form-control" id="gradDegree" /></td>
+          <td><input type="text" class="form-control" id="gradFrom" /></td>
+          <td><input type="text" class="form-control" id="gradTo" /></td>
+          <td><input type="text" class="form-control" id="gradUnits" /></td>
+          <td><input type="text" class="form-control" id="gradYearGrad" /></td>
+          <td><input type="text" class="form-control" id="gradHonors" /></td>
+        </tr>
+      </table>
+
+      
+<div class="text-end mt-1" style="font-size: 11px; font-style: italic;">
+    CS FORM 212 (Revised 2017), Page 1 of 4
+</div>
+
+        <div class="container mt-3 mb-4 text-center">
+      <button id="saveBtn" class="btn btn-success btn-lg" type="button">Save</button>
+      <a href="page2.html" class="btn btn-primary btn-lg" role="button">Go to Page 2</a>
+    </div>
+
+    <script>
+      // Citizenship checkbox logic
+      const filipino = document.getElementById("citizenshipFilipino");
+      const dual = document.getElementById("citizenshipDual");
+      const byBirth = document.getElementById("dualByBirth");
+      const byNaturalization = document.getElementById("dualByNaturalization");
+      const dualCountry = document.getElementById("dualCountry");
+
+      filipino.addEventListener("change", function () {
+        if (filipino.checked) {
+          dual.checked = false;
+          byBirth.checked = false;
+          byNaturalization.checked = false;
+          byBirth.disabled = true;
+          byNaturalization.disabled = true;
+          dualCountry.disabled = true;
+          dualCountry.selectedIndex = 0;
+        }
+      });
+
+      dual.addEventListener("change", function () {
+        if (dual.checked) {
+          filipino.checked = false;
+          byBirth.disabled = false;
+          byNaturalization.disabled = false;
+        } else {
+          byBirth.checked = false;
+          byNaturalization.checked = false;
+          byBirth.disabled = true;
+          byNaturalization.disabled = true;
+          dualCountry.disabled = true;
+          dualCountry.selectedIndex = 0;
+        }
+        updateCountryDropdown();
+      });
+
+      byBirth.addEventListener("change", updateCountryDropdown);
+      byNaturalization.addEventListener("change", updateCountryDropdown);
+
+      function updateCountryDropdown() {
+        if (dual.checked && (byBirth.checked || byNaturalization.checked)) {
+          dualCountry.disabled = false;
+        } else {
+          dualCountry.disabled = true;
+          dualCountry.selectedIndex = 0;
+        }
+      }
+
+      // Initialize state on page load
+      if (!dual.checked) {
+        byBirth.disabled = true;
+        byNaturalization.disabled = true;
+        dualCountry.disabled = true;
+      } else {
+        updateCountryDropdown();
+      }
+
+      // Civil status logic
+      const civilOther = document.getElementById("civilOther");
+      const civilOtherInput = document.getElementById("civilOtherInput");
+      const civilRadios = document.querySelectorAll(
+        'input[name="civilStatus"]'
+      );
+      civilRadios.forEach((radio) => {
+        radio.addEventListener("change", function () {
+          if (civilOther.checked) {
+            civilOtherInput.style.display = "inline-block";
+            civilOtherInput.disabled = false;
+            civilOtherInput.focus();
+          } else {
+            civilOtherInput.style.display = "none";
+            civilOtherInput.disabled = true;
+            civilOtherInput.value = "";
+          }
+        });
+      });
+    </script>
+
+<script>
+  document.getElementById("saveBtn").addEventListener("click", function () {
+    // Collect all input values
+    const data = {
+      surname: document.getElementById("surname").value, // SURNAME
+      firstname: document.getElementById("firstname").value, // FIRST NAME
+      middlename: document.getElementById("middlename").value, // MIDDLE NAME
+      nameExtension: document.getElementById("nameExtension").value, // NAME EXTENSION
+      dateOfBirth: document.getElementById("dateOfBirth").value, // DATE OF BIRTH
+      placeOfBirth: document.getElementById("placeOfBirth").value, // PLACE OF BIRTH
+      sex: document.querySelector('input[name="sex"]:checked')?.value || "", // SEX
+      civilStatus: document.querySelector('input[name="civilStatus"]:checked')?.value || "", // CIVIL STATUS
+      civilOtherInput: document.getElementById("civilOtherInput").value, // CIVIL STATUS OTHER
+      citizenship: document.getElementById("citizenshipFilipino").checked ? "Filipino" : (document.getElementById("citizenshipDual").checked ? "Dual Citizenship" : ""), // CITIZENSHIP
+      dualType: document.getElementById("dualByBirth").checked ? "by birth" : (document.getElementById("dualByNaturalization").checked ? "by naturalization" : ""), // DUAL TYPE
+      dualCountry: document.getElementById("dualCountry").value, // DUAL COUNTRY
+      height: document.getElementById("height").value, // HEIGHT
+      weight: document.getElementById("weight").value, // WEIGHT
+      bloodType: document.getElementById("bloodType").value, // BLOOD TYPE
+      gsisId: document.getElementById("gsisId").value, // GSIS ID NO.
+      pagibigId: document.getElementById("pagibigId").value, // PAG-IBIG ID NO.
+      philhealthNo: document.getElementById("philhealthNo").value, // PHILHEALTH NO.
+      sssNo: document.getElementById("sssNo").value, // SSS NO.
+      tinNo: document.getElementById("tinNo").value, // TIN NO.
+      agencyEmpNo: document.getElementById("agencyEmpNo").value, // AGENCY EMPLOYEE NO.
+      residentialAddress: [
+        document.getElementById("resAddress1").value,
+        document.getElementById("resAddress2").value,
+        document.getElementById("resAddress3").value,
+        document.getElementById("resZip").value
+      ].join(", "), // RESIDENTIAL ADDRESS
+      permanentAddress: [
+        document.getElementById("permAddress1").value,
+        document.getElementById("permAddress2").value,
+        document.getElementById("permAddress3").value,
+        document.getElementById("permZip").value
+      ].join(", "), // PERMANENT ADDRESS
+      telNo: document.getElementById("telNo").value, // TELEPHONE NO.
+      mobileNo: document.getElementById("mobileNo").value, // MOBILE NO.
+      email: document.getElementById("email").value, // EMAIL ADDRESS
+      spouseSurname: document.getElementById("spouseSurname").value, // SPOUSE SURNAME
+      spouseFirstname: document.getElementById("spouseFirstname").value, // SPOUSE FIRST NAME
+      spouseMiddlename: document.getElementById("spouseMiddlename").value, // SPOUSE MIDDLE NAME
+      spouseExtension: document.getElementById("spouseExtension").value, // SPOUSE EXTENSION
+      spouseOccupation: document.getElementById("spouseOccupation").value, // SPOUSE OCCUPATION
+      childName1: document.getElementById("childName1").value, // CHILD NAME 1
+      childDob1: document.getElementById("childDob1").value, // CHILD DOB 1
+      fatherSurname: document.getElementById("fatherSurname").value, // FATHER SURNAME
+      fatherFirstname: document.getElementById("fatherFirstname").value, // FATHER FIRST NAME
+      fatherMiddlename: document.getElementById("fatherMiddlename").value, // FATHER MIDDLE NAME
+      fatherExtension: document.getElementById("fatherExtension").value, // FATHER EXTENSION
+      fatherOther: document.getElementById("fatherOther").value, // FATHER OTHER
+      fatherDob: document.getElementById("fatherDob").value, // FATHER DOB
+      motherSurname: document.getElementById("motherSurname").value, // MOTHER SURNAME
+      motherFirstname: document.getElementById("motherFirstname").value, // MOTHER FIRST NAME
+      motherMiddlename: document.getElementById("motherMiddlename").value, // MOTHER MIDDLE NAME
+      motherOther: document.getElementById("motherOther").value, // MOTHER OTHER
+      motherDob: document.getElementById("motherDob").value, // MOTHER DOB
+      elemSchool: document.getElementById("elemSchool").value, // ELEMENTARY SCHOOL
+      elemDegree: document.getElementById("elemDegree").value, // ELEMENTARY DEGREE
+      elemFrom: document.getElementById("elemFrom").value, // ELEMENTARY FROM
+      elemTo: document.getElementById("elemTo").value, // ELEMENTARY TO
+      elemUnits: document.getElementById("elemUnits").value, // ELEMENTARY UNITS
+      elemYearGrad: document.getElementById("elemYearGrad").value, // ELEMENTARY YEAR GRADUATED
+      elemHonors: document.getElementById("elemHonors").value, // ELEMENTARY HONORS
+      secSchool: document.getElementById("secSchool").value, // SECONDARY SCHOOL
+      secDegree: document.getElementById("secDegree").value, // SECONDARY DEGREE
+      secFrom: document.getElementById("secFrom").value, // SECONDARY FROM
+      secTo: document.getElementById("secTo").value, // SECONDARY TO
+      secUnits: document.getElementById("secUnits").value, // SECONDARY UNITS
+      secYearGrad: document.getElementById("secYearGrad").value, // SECONDARY YEAR GRADUATED
+      secHonors: document.getElementById("secHonors").value, // SECONDARY HONORS
+      vocSchool: document.getElementById("vocSchool").value, // VOCATIONAL SCHOOL
+      vocDegree: document.getElementById("vocDegree").value, // VOCATIONAL DEGREE
+      vocFrom: document.getElementById("vocFrom").value, // VOCATIONAL FROM
+      vocTo: document.getElementById("vocTo").value, // VOCATIONAL TO
+      vocUnits: document.getElementById("vocUnits").value, // VOCATIONAL UNITS
+      vocYearGrad: document.getElementById("vocYearGrad").value, // VOCATIONAL YEAR GRADUATED
+      vocHonors: document.getElementById("vocHonors").value, // VOCATIONAL HONORS
+      colSchool: document.getElementById("colSchool").value, // COLLEGE SCHOOL
+      colDegree: document.getElementById("colDegree").value, // COLLEGE DEGREE
+      colFrom: document.getElementById("colFrom").value, // COLLEGE FROM
+      colTo: document.getElementById("colTo").value, // COLLEGE TO
+      colUnits: document.getElementById("colUnits").value, // COLLEGE UNITS
+      colYearGrad: document.getElementById("colYearGrad").value, // COLLEGE YEAR GRADUATED
+      colHonors: document.getElementById("colHonors").value, // COLLEGE HONORS
+      gradSchool: document.getElementById("gradSchool").value, // GRADUATE SCHOOL
+      gradDegree: document.getElementById("gradDegree").value, // GRADUATE DEGREE
+      gradFrom: document.getElementById("gradFrom").value, // GRADUATE FROM
+      gradTo: document.getElementById("gradTo").value, // GRADUATE TO
+      gradUnits: document.getElementById("gradUnits").value, // GRADUATE UNITS
+      gradYearGrad: document.getElementById("gradYearGrad").value, // GRADUATE YEAR GRADUATED
+      gradHonors: document.getElementById("gradHonors").value // GRADUATE HONORS
+    };
+    
+    fetch("/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(result => {
+        alert(result.message || "Saved!");
+        // Hide the Save button after successful save
+        if (result.success) {
+          document.getElementById("saveBtn").style.display = "none";
+        }
+      })
+      .catch(() => alert("Failed to save data."));
+});
+
+
+  </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Data Sheet</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    /* Dashed upload box (signature) */
+    .upload-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .upload-box {
+      width: 260px;
+      height: 120px;
+      border: 2px dashed #777;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8px;
+      cursor: pointer;
+      background: #fafafa;
+    }
+    .upload-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .upload-box .placeholder {
+      color: #666;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+    .upload-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .btn-clear {
+      padding: 4px 8px;
+      font-size: 13px;
+    }
+    input[type="file"] {
+      display: none;
+    }
+  </style>
+  <body>
+    <!-- Header with logos and text -->
+    <div class="container mt-3 mb-4">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <img src="images/bagongPilipinas.png" class="logos" />
+        </div>
+        <div class="col-auto">
+          <img src="images/SDO-VAL-Logo.png" class="logos" />
+        </div>
+        <div class="col ps-3">
+          <div class="sdo-title">SCHOOL DIVISION OFFICE - VALENZUELA</div>
+          <div class="deped-title">Department of Education</div>
+        </div>
+      </div>
+    </div>
+    <div class="pds-container p-0">
+      <!-- Section IX: QUESTIONS -->
+      <div class="section-header">IX. QUESTIONS</div>
+      <table class="pds-table">
+        <!-- Q34 -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              34. Are you related by consanguinity or affinity to the appointing or recommending authority, or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, Bureau or Department where you will be appointed,
+              <br>a. within the third degree? <br>
+              b. within the fourth degree (for Local Government Unit - Career Employees)?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <!-- 34a -->
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q34a_yes" /><label for="q34a_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q34a_no" /><label for="q34a_no">NO</label>
+              </div>
+            </div>
+            <!-- 34b -->
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 8px;">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q34b_yes" /><label for="q34b_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q34b_no" /><label for="q34b_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details (state case number and final disposition):</div>
+            <input type="text" class="form-control mt-1" id="q34_details" placeholder="If yes, give details" />
+          </td>
+        </tr>
+      
+        <!-- Q35 -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              35. Have you ever been found guilty of any administrative offence?<br>
+              b. Have you been criminally charged before any court?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <!-- 35a -->
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q35a_yes" /><label for="q35a_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q35a_no" /><label for="q35a_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q35a_details" placeholder="If yes, give details" />
+      
+            <!-- 35b -->
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 10px;">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q35b_yes" /><label for="q35b_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q35b_no" /><label for="q35b_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q35b_details" placeholder="If yes, give details" />
+            <div class="small-note">Date Filed:</div>
+            <input type="date" class="form-control mt-1" id="q35b_date" style="width: 200px" />
+            <input type="text" class="form-control mt-1" id="q35b_status" placeholder="Status of Case/s" />
+          </td>
+        </tr>
+      
+        <!-- Q36 -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              36. Have you ever been convicted of any crime or violation of any law, court or military order, or ordinance by any court or tribunal?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q36_yes" /><label for="q36_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q36_no" /><label for="q36_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q36_details" placeholder="If yes, give details" />
+          </td>
+        </tr>
+      
+        <!-- Q37 -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              37. Have you ever been separated from the service in any following modes: resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or phased out (abolition) in the public or private sector?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q37_yes" /><label for="q37_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q37_no" /><label for="q37_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q37_details" placeholder="If yes, give details" />
+          </td>
+        </tr>
+      
+        <!-- Q38 & Q39 -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              38. a. Have you ever been a candidate in a national or local election held within the last year (except Barangay election)?<br>
+                  b. Have you resigned from the government service during the three (3)-month period before the last election to promote/actively campaign for a national or local candidate?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <!-- 38a -->
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q38a_yes" /><label for="q38a_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q38a_no" /><label for="q38a_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q38a_details" placeholder="If yes, give details" />
+      
+            <!-- 38b -->
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 10px;">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q38b_yes" /><label for="q38b_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q38b_no" /><label for="q38b_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q38b_details" placeholder="If yes, give details" />
+          </td>
+        </tr>
+      
+        <!-- Q39 (immigrant) -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              39. Have you acquired the status of an immigrant or permanent resident of another country?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q39imm_yes" /><label for="q39imm_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q39imm_no" /><label for="q39imm_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q39imm_details" placeholder="If yes, give details" />
+          </td>
+        </tr>
+      
+        <!-- Q40 -->
+        <tr>
+          <td class="gray-cell" style="width: 65%">
+            <div style="font-weight: 700">
+              40. Pursuant to: (a) Indigenous People's Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following items:
+              <br />a. Are you a member of indigenous group? <br />b. Are you a person with disability? <br />c. Are you a solo parent?
+            </div>
+          </td>
+          <td style="width: 35%">
+            <!-- 40a -->
+            <div style="display: flex; gap: 12px; align-items: center">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q40a_yes" /><label for="q40a_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q40a_no" /><label for="q40a_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q40a_details" placeholder="If yes, give details" />
+      
+            <!-- 40b -->
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 10px;">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q40b_yes" /><label for="q40b_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q40b_no" /><label for="q40b_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q40b_details" placeholder="If yes, give details" />
+      
+            <!-- 40c -->
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 10px;">
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q40c_yes" /><label for="q40c_yes">YES</label>
+              </div>
+              <div class="checkbox-inline">
+                <input type="checkbox" id="q40c_no" /><label for="q40c_no">NO</label>
+              </div>
+            </div>
+            <div class="small-note">If yes, give details:</div>
+            <input type="text" class="form-control mt-1" id="q40c_details" placeholder="If yes, give details" />
+          </td>
+        </tr>
+      </table>
+
+      <!-- REFERENCES -->
+      <div class="section-header">
+        41. REFERENCES
+        <small>(Person not related by consanguinity or affinity to applicant / appointee)</small>
+      </div>
+      <table class="pds-table mb-3">
+        <thead>
+          <tr class="text-center gray-cell">
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>TEL. NO.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" class="form-control" id="refName1" placeholder="Name" />
+            </td>
+            <td>
+              <input type="text" class="form-control" id="refAddress1" placeholder="Address" />
+            </td>
+            <td>
+              <input type="text" class="form-control" id="refTel1" placeholder="Tel. No." />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="form-control" id="refName2" placeholder="Name" />
+            </td>
+            <td>
+              <input type="text" class="form-control" id="refAddress2" placeholder="Address" />
+            </td>
+            <td>
+              <input type="text" class="form-control" id="refTel2" placeholder="Tel. No." />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="form-control" id="refName3" placeholder="Name" />
+            </td>
+            <td>
+              <input type="text" class="form-control" id="refAddress3" placeholder="Address" />
+            </td>
+            <td>
+              <input type="text" class="form-control" id="refTel3" placeholder="Tel. No." />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- GOVERNMENT ID -->
+      <div class="row mt-3">
+        <div class="col-md-8">
+          <div class="gray-cell" style="font-weight: 700">
+            42. I declare under oath...
+          </div>
+          <p class="gray-cell" style="font-size: 14px">
+            I declare under oath that I have personally accomplished this
+            Personal Data Sheet which is a true, correct and complete statement
+            pursuant to the provisions of pertinent laws, rules and regulations
+            of the Republic of the Philippines. I authorize the agency
+            head/authorized representative to verify/validate the contents
+            stated herein. I agree that any misrepresentation made in this
+            document and its attachments shall cause the filing of
+            administrative/criminal case/s against me.
+          </p>
+
+          <!-- GOVERNMENT ID SECTION -->
+          <table class="pds-table">
+            <tr>
+              <td>
+                <div class="gray-cell" style="font-weight: 700">
+                  Government Issued ID (i.e. Passport, GSIS, SSS, PRC, Driver’s License, etc.)
+                </div>
+                <small><i>Please indicate ID number and date of issuance</i></small>
+                <div class="mt-2">Government Issued ID:</div>
+                <input
+                  type="text"
+                  class="form-control mb-1"
+                  id="govtIdType"
+                  placeholder="Type of ID"
+                />
+                <div>ID/License/Passport No.:</div>
+                <input
+                  type="text"
+                  class="form-control mb-1"
+                  id="govtIdNumber"
+                  placeholder="ID Number"
+                />
+                <div>Date/Place of Issuance:</div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="govtIdIssue"
+                  placeholder="Date/Place of Issuance"
+                />
+              </td>
+            </tr>
+          </table>
+
+        </div>
+
+
+        <!-- FOOTER NOTE -->
+        <div class="text-end mt-1" style="font-size: 11px; font-style: italic">
+          CS FORM 212 (Revised 2017), Page 4 of 4
+        </div>
+      </div>
+
+      
+    </div>
+
+    <!-- CONFIRMATION + NAV BUTTONS -->
+    <div class="container mt-3 mb-4" style="max-width: 1030px">
+      <div class="card p-3">
+        <div class="form-check">
+          <input
+            class="form-check-input ms-2 me-2"
+            type="checkbox"
+            id="confirmCheckbox"
+            style="border: 2px solid #000;"
+          />
+          <label
+            class="form-check-label"
+            for="confirmCheckbox"
+            style="font-weight: 600"
+          >
+            I confirm that the data listed above is true and correct. I
+            understand it cannot be modified once submitted.
+          </label>
+        </div>
+
+        <div class="mt-3 d-flex gap-2">
+          <button type="button" id="backBtn" class="btn btn-secondary">
+            Back
+          </button>
+          <button type="button" id="submitBtn" class="btn btn-primary" disabled>
+            Submit
+          </button>
+        </div>
+
+        <div
+          id="submitStatus"
+          class="mt-3"
+          style="display: none; font-weight: 600"
+        ></div>
+      </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // YES/NO mutual exclusion logic
+      const pairs = [
+        ["q34a_yes", "q34a_no"],
+        ["q34b_yes", "q34b_no"],
+        ["q35a_yes", "q35a_no"],
+        ["q35b_yes", "q35b_no"],
+        ["q36_yes", "q36_no"],
+        ["q37_yes", "q37_no"],
+        ["q38a_yes", "q38a_no"],
+        ["q38b_yes", "q38b_no"],
+        ["q39imm_yes", "q39imm_no"],
+        ["q40a_yes", "q40a_no"],
+        ["q40b_yes", "q40b_no"],
+        ["q40c_yes", "q40c_no"],
+        ["q39_yes", "q39_no"]
+      ];
+      pairs.forEach(([a, b]) => {
+        const elA = document.getElementById(a);
+        const elB = document.getElementById(b);
+        if (!elA || !elB) return;
+        elA.addEventListener("change", () => { if (elA.checked) elB.checked = false; });
+        elB.addEventListener("change", () => { if (elB.checked) elA.checked = false; });
+      });
+    
+      // Button logic
+      const confirmCheckbox = document.getElementById("confirmCheckbox");
+      const submitBtn = document.getElementById("submitBtn");
+      const backBtn = document.getElementById("backBtn");
+      const submitStatus = document.getElementById("submitStatus");
+    
+      confirmCheckbox.addEventListener("change", () => {
+        submitBtn.disabled = !confirmCheckbox.checked;
+      });
+    
+      backBtn.addEventListener("click", () => {
+        history.back();
+      });
+    
+      submitBtn.addEventListener("click", () => {
+        if (!confirmCheckbox.checked) return;
+        const ok = confirm("Once submitted, this data cannot be modified. Do you want to proceed?");
+        if (!ok) return;
+    
+        // Disable UI
+        submitBtn.disabled = true;
+        confirmCheckbox.disabled = true;
+        backBtn.disabled = true;
+        submitStatus.style.display = "block";
+        submitStatus.textContent = "Submitting...";
+    
+        // Collect data
+        const data = {
+          // Questions
+          q34a: document.getElementById("q34a_yes").checked ? "YES" : (document.getElementById("q34a_no").checked ? "NO" : ""),
+          q34b: document.getElementById("q34b_yes").checked ? "YES" : (document.getElementById("q34b_no").checked ? "NO" : ""),
+          q34_details: document.getElementById("q34_details").value,
+          q35a: document.getElementById("q35a_yes").checked ? "YES" : (document.getElementById("q35a_no").checked ? "NO" : ""),
+          q35a_details: document.getElementById("q35a_details").value,
+          q35b: document.getElementById("q35b_yes").checked ? "YES" : (document.getElementById("q35b_no").checked ? "NO" : ""),
+          q35b_details: document.getElementById("q35b_details").value,
+          q35b_date: document.getElementById("q35b_date").value,
+          q35b_status: document.getElementById("q35b_status").value,
+          q36: document.getElementById("q36_yes").checked ? "YES" : (document.getElementById("q36_no").checked ? "NO" : ""),
+          q36_details: document.getElementById("q36_details").value,
+          q37: document.getElementById("q37_yes").checked ? "YES" : (document.getElementById("q37_no").checked ? "NO" : ""),
+          q37_details: document.getElementById("q37_details").value,
+          q38a: document.getElementById("q38a_yes").checked ? "YES" : (document.getElementById("q38a_no").checked ? "NO" : ""),
+          q38a_details: document.getElementById("q38a_details").value,
+          q38b: document.getElementById("q38b_yes").checked ? "YES" : (document.getElementById("q38b_no").checked ? "NO" : ""),
+          q38b_details: document.getElementById("q38b_details").value,
+          q39: document.getElementById("q39_yes") ? (document.getElementById("q39_yes").checked ? "YES" : (document.getElementById("q39_no").checked ? "NO" : "")) : "",
+          q39_details: document.getElementById("q39_details") ? document.getElementById("q39_details").value : "",
+          q39imm: document.getElementById("q39imm_yes").checked ? "YES" : (document.getElementById("q39imm_no").checked ? "NO" : ""),
+          q39imm_details: document.getElementById("q39imm_details").value,
+          q40a: document.getElementById("q40a_yes").checked ? "YES" : (document.getElementById("q40a_no").checked ? "NO" : ""),
+          q40a_details: document.getElementById("q40a_details").value,
+          q40b: document.getElementById("q40b_yes").checked ? "YES" : (document.getElementById("q40b_no").checked ? "NO" : ""),
+          q40b_details: document.getElementById("q40b_details").value,
+          q40c: document.getElementById("q40c_yes").checked ? "YES" : (document.getElementById("q40c_no").checked ? "NO" : ""),
+          q40c_details: document.getElementById("q40c_details").value,
+    
+          // References
+          refName1: document.getElementById("refName1").value,
+          refAddress1: document.getElementById("refAddress1").value,
+          refTel1: document.getElementById("refTel1").value,
+          refName2: document.getElementById("refName2").value,
+          refAddress2: document.getElementById("refAddress2").value,
+          refTel2: document.getElementById("refTel2").value,
+          refName3: document.getElementById("refName3").value,
+          refAddress3: document.getElementById("refAddress3").value,
+          refTel3: document.getElementById("refTel3").value,
+    
+          // Government ID
+          govtIdType: document.getElementById("govtIdType").value,
+          govtIdNumber: document.getElementById("govtIdNumber").value,
+          govtIdIssue: document.getElementById("govtIdIssue").value
+        };
+    
+        fetch("/savePage4", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        })
+          .then(res => res.json())
+          .then(result => {
+            if (result.success) {
+              submitStatus.textContent = "Submission complete. Thank you.";
+            } else {
+              submitStatus.textContent = "Save failed: " + result.error;
+            }
+          })
+          .catch(() => {
+            submitStatus.textContent = "Failed to save data.";
+          });
+      });
+    });
+    </script>
+
+  </body>
+</html>
